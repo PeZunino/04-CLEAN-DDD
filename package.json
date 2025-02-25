@@ -1,0 +1,27 @@
+{
+  "name": "04-clean-ddd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx vitest run",
+    "test:watch": "npx vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeZunino/04-CLEAN-DDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PeZunino/04-CLEAN-DDD/issues"
+  },
+  "homepage": "https://github.com/PeZunino/04-CLEAN-DDD#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  }
+}
