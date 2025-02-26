@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npx vitest run",
-    "test:watch": "npx vitest"
+    "test:watch": "npx vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,14 @@
   },
   "homepage": "https://github.com/PeZunino/04-CLEAN-DDD#readme",
   "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.1.0",
     "@types/node": "^22.13.5",
+    "eslint": "^9.21.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.0.0",
     "typescript": "^5.7.3",
+    "typescript-eslint": "^8.25.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7"
   },
