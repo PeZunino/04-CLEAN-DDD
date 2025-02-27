@@ -23,6 +23,7 @@
   "homepage": "https://github.com/PeZunino/04-CLEAN-DDD#readme",
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@faker-js/faker": "^9.5.0",
     "@stylistic/eslint-plugin": "^4.1.0",
     "@types/node": "^22.13.5",
     "eslint": "^9.21.0",
