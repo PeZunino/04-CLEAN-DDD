@@ -7,11 +7,7 @@ export class InMemoryQuestionCommentsRepository implements QuestionCommentsRepos
 	async findById(id: string) {
 		const questionComment = this.items.find((item) => item.id.toString() === id);
 
-		if (!questionComment) {
-			return null;
-		}
-
-		return questionComment;
+		return questionComment ?? null;
 	}
   
 	async delete(questionComment: QuestionComment) {
