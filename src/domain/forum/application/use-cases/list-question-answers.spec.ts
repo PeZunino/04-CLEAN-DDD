@@ -27,12 +27,12 @@ describe('list Question Answers', () => {
 			makeAnswer({questionId: new UniqueEntityID('question-1'),}),
 		);
 
-		const { answers } = await sut.execute({
+		const result = await sut.execute({
 			questionId: 'question-1',
 			page: 1,
 		});
 
-		expect(answers)
+		expect(result.value?.answers)
 			.toHaveLength(3);
 	});
 
@@ -43,12 +43,12 @@ describe('list Question Answers', () => {
 			);
 		}
 
-		const { answers } = await sut.execute({
+		const result = await sut.execute({
 			questionId: 'question-1',
 			page: 2,
 		});
 
-		expect(answers)
+		expect(result.value?.answers)
 			.toHaveLength(2);
 	});
 });

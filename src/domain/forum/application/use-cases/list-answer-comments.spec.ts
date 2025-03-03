@@ -27,12 +27,12 @@ describe('List Answer Comments', () => {
 			makeAnswerComment({answerId: new UniqueEntityID('answer-1'),}),
 		);
 
-		const { answerComments } = await sut.execute({
+		const result = await sut.execute({
 			answerId: 'answer-1',
 			page: 1,
 		});
 
-		expect(answerComments)
+		expect(result.value?.answerComments)
 			.toHaveLength(3);
 	});
 
@@ -43,12 +43,12 @@ describe('List Answer Comments', () => {
 			);
 		}
 
-		const { answerComments } = await sut.execute({
+		const result = await sut.execute({
 			answerId: 'answer-1',
 			page: 2,
 		});
 
-		expect(answerComments)
+		expect(result.value?.answerComments)
 			.toHaveLength(2);
 	});
 });

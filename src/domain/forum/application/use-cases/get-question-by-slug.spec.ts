@@ -21,13 +21,12 @@ describe('Create Question', ()=>{
     
 		inMemoryQuestionsRepository.create(newQuestion);
 
-		const {question} = await sut.execute({slug: 'example-question'});
-  
-		expect(question.id)
-			.toBeTruthy();
+		const result = await sut.execute({slug: 'example-question'});
 
-		expect(question.title)
-			.toEqual(newQuestion.title);
+		expect(result.value)
+			.toMatchObject({question: expect.objectContaining({title: newQuestion.title,}),});
+
+	
 	});
 
 });
