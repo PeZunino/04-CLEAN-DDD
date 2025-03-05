@@ -1,15 +1,20 @@
 import { makeAnswer } from 'test/factories/make-answer';
+import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository';
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { ListQuestionAnswersUseCase } from '@/domain/forum/application/use-cases/list-question-answers';
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
 
+let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepository;
+
 let sut: ListQuestionAnswersUseCase;
 
 describe('list Question Answers', () => {
 	beforeEach(() => {
-		inMemoryAnswersRepository = new InMemoryAnswersRepository();
+		inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepository();
+
+		inMemoryAnswersRepository = new InMemoryAnswersRepository(inMemoryAnswerAttachmentsRepository);
 
 		sut = new ListQuestionAnswersUseCase(inMemoryAnswersRepository);
 	});

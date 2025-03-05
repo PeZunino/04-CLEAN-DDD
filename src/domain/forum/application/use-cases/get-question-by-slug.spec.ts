@@ -1,4 +1,5 @@
 import { makeQuestion } from 'test/factories/make-question';
+import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository';
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository';
 import { Slug } from '../../enterprise/entities/value-objects/slug';
 import { GetQuestionBySlug } from './get-question-by-slug';
@@ -6,12 +7,18 @@ import { GetQuestionBySlug } from './get-question-by-slug';
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
 
+let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository;
+
 let sut: GetQuestionBySlug;
 
 describe('Create Question', ()=>{
   
 	beforeEach(()=>{
-		inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
+		inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepository();
+
+		inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+			inMemoryQuestionAttachmentsRepository,
+		);
 
 		sut = new GetQuestionBySlug(inMemoryQuestionsRepository);
 	});
