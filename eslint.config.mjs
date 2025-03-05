@@ -7,6 +7,8 @@ import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+	pluginJs.configs.recommended,
+	...tseslint.configs.recommended,
 	{
 		files: [
 			'**/*.{js,mjs,cjs,ts}'
@@ -21,6 +23,7 @@ export default [
 		},
 		rules: {
 			semi: 'error',
+			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{
@@ -89,6 +92,5 @@ export default [
 			],
 		},
 	},
-	pluginJs.configs.recommended,
-	...tseslint.configs.recommended,
+
 ];
